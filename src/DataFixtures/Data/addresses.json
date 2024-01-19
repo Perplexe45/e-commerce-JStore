@@ -1,0 +1,122 @@
+[
+    {
+        "name": "Bureau",
+        "client_name": "Daniel TOUKA",
+        "street": "254 Rue de l'Amour",
+        "code_postal": "85000",
+        "city": "Paris",
+        "state": "FR"
+    },
+    {
+        "name": "Maison",
+        "client_name": "Alice DUPONT",
+        "street": "123 Avenue des Roses",
+        "code_postal": "75001",
+        "city": "Paris",
+        "state": "FR"
+    },
+    {
+        "name": "bureau",
+        "client_name": "Éric MARTIN",
+        "street": "789 Rue du Soleil",
+        "code_postal": "69002",
+        "city": "Lyon",
+        "state": "FR"
+    },
+    {
+        "name": "maison",
+        "client_name": "Sophie LEBLANC",
+        "street": "456 Boulevard des Arbres",
+        "code_postal": "13003",
+        "city": "Marseille",
+        "state": "FR"
+    },
+    {
+        "name": "BUREAU",
+        "client_name": "Thomas DUBOIS",
+        "street": "987 Avenue de la Lune",
+        "code_postal": "33000",
+        "city": "Bordeaux",
+        "state": "FR"
+    },
+    {
+        "name": "Maison",
+        "client_name": "Sophie MARTIN",
+        "street": "101 Rue de la Joie",
+        "code_postal": "69003",
+        "city": "Lyon",
+        "state": "FR"
+    },
+    {
+        "name": "Bureau",
+        "client_name": "Lucas DUPUIS",
+        "street": "555 Boulevard de la Liberté",
+        "code_postal": "75002",
+        "city": "Paris",
+        "state": "FR"
+    },
+    {
+        "name": "Maison",
+        "client_name": "Émilie ROUSSEAU",
+        "street": "202 Rue du Bonheur",
+        "code_postal": "33001",
+        "city": "Bordeaux",
+        "state": "FR"
+    },
+    {
+        "name": "Bureau",
+        "client_name": "Nathalie LEBLANC",
+        "street": "777 Avenue de la Paix",
+        "code_postal": "13004",
+        "city": "Marseille",
+        "state": "FR"
+    },
+    {
+        "name": "Maison",
+        "client_name": "Philippe DUBOIS",
+        "street": "303 Rue de la Tranquillité",
+        "code_postal": "85001",
+        "city": "Paris",
+        "state": "FR"
+    },
+    {
+        "name": "Bureau",
+        "client_name": "Marie CLERC",
+        "street": "888 Rue de la Plume",
+        "code_postal": "69004",
+        "city": "Lyon",
+        "state": "FR"
+    },
+    {
+        "name": "Maison",
+        "client_name": "Antoine DUPUIS",
+        "street": "505 Avenue du Soleil",
+        "code_postal": "75003",
+        "city": "Paris",
+        "state": "FR"
+    },
+    {
+        "name": "Bureau",
+        "client_name": "Isabelle MARTIN",
+        "street": "222 Boulevard des Étoiles",
+        "code_postal": "33002",
+        "city": "Bordeaux",
+        "state": "FR"
+    },
+    {
+        "name": "Maison",
+        "client_name": "Pierre LEBLANC",
+        "street": "606 Rue du Bonheur",
+        "code_postal": "13005",
+        "city": "Marseille",
+        "state": "FR"
+    },
+    {
+        "name": "Bureau",
+        "client_name": "Sophie DUPONT",
+        "street": "999 Avenue de la Liberté",
+        "code_postal": "85002",
+        "city": "Paris",
+        "state": "FR"
+    }
+]
