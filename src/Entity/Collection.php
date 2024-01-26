@@ -34,6 +34,9 @@ class Collection
     #[ORM\Column]
     private ?\DateTimeImmutable $created_at = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?bool $isMega = null;
+
     public function __construct()
     {
         $this->setCreatedAt(new \DateTimeImmutable());
@@ -124,6 +127,18 @@ class Collection
     public function setCreatedAt(\DateTimeImmutable $created_at): static
     {
         $this->created_at = $created_at;
+
+        return $this;
+    }
+
+    public function isIsMega(): ?bool
+    {
+        return $this->isMega;
+    }
+
+    public function setIsMega(?bool $isMega): static
+    {
+        $this->isMega = $isMega;
 
         return $this;
     }

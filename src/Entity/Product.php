@@ -72,10 +72,14 @@ class Product
     #[ORM\Column]
     private ?\DateTimeImmutable $created_at = null;
 
+    #[ORM\ManyToOne(targetEntity: self::class)]
+    private ?self $relatedProducts = null;
+
     public function __construct()
     {
         $this->categories = new ArrayCollection();
         $this->setCreatedAt(new \DateTimeImmutable());
+        $this->relatedProducts = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -309,5 +313,22 @@ class Product
         $this->updated_at = $updated_at;
 
         return $this;
+    }
+
+    public function getRelatedProducts(): ?self
+    {
+        return $this->relatedProducts;
+    }
+
+    public function setRelatedProducts(?self $relatedProducts): static
+    {
+        $this->relatedProducts = $relatedProducts;
+
+        return $this;
+    }
+
+    public function __toString(): string
+    {
+        return $this->name;
     }
 }

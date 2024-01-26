@@ -233,6 +233,7 @@
 .ti-comment-alt:before {
 	content: "\e645";
 }
+
 .ti-close:before {
 	content: "\e646";
 }

@@ -6,8 +6,10 @@ use App\Entity\Setting;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use Symfony\Component\Validator\Constraints\Email;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
@@ -36,6 +38,7 @@ class SettingCrudController extends AbstractCrudController
             IdField::new('id')->hideOnForm(),
             TextField::new('website_name'),
             TextField::new('description')->hideOnIndex(),
+            EmailField::new('email')->hideOnIndex(),
             IntegerField::new('taxe_rate'),
             ImageField::new('logo')
             ->setBasePath("assets/images/setting")
@@ -56,6 +59,7 @@ class SettingCrudController extends AbstractCrudController
             TextField::new('city'),
             TextField::new('code_postal'),
             TextField::new('state'),
+            TextField::new('copyright')->hideOnIndex(),
         ];
     }
     

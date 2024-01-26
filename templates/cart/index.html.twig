@@ -1,0 +1,137 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Jstore | Shopping Cart
+{% endblock %}
+
+{% block body %}
+	{% include "page_head/page_head.html.twig" with {'page_name': 'Cart'} %}
+	<div class="main_content cart_content" {# data-cart="{{cart_json}}" #} {# data-carriers="{{carriers_json}}" #}>
+		<div class="section">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="table-responsive shop_cart_table">
+							<table class="table table-striped">
+								<thead class="" >
+									<tr class="" >
+										<th class="product-thumbnail">&nbsp;</th>
+										<th class="product-name">Article</th>
+										<th class="product-price">Prix</th>
+										<th class="product-quantity">Quantité</th>
+										<th class="product-subtotal">Total HT</th>
+										<th class="product-subtotal">TVA (20%)</th>
+										<th class="product-subtotal">Total TTC</th>
+										<th class="product-remove ps-5">Supprimer</th>
+									</tr>
+								</thead>
+								<tbody>
+									{% for item in cart.items %}
+										<tr>
+											<td class="product-thumbnail">
+												<a><img width="50" alt="product1" src="/assets/images/products/{{ item.product.imageUrls[0] }}"></a>
+											</td>
+											<td data-title="Product" class="product-name">
+												<a>
+													{{ item.product.name }}
+												</a>
+											</td>
+											<td data-title="Price" class="product-price">{{ (item.product.soldePrice/100) | number_format(2,',','.') }} €</td>
+											<td data-title="Quantity" class="product-quantity">
+												<div class="quantity">
+													<a href="/cart/remove/{{item.product.id}}/1">
+														<input type="button" value="-" class="minus">
+													</a>
+													<input type="text" name="quantity" value=" {{ item.quantity }} " title="Qty" size="4" class="qty">
+													<a href="/cart/add/{{item.product.id}}/1">
+														<input type="button" value="+" class="plus"></div>
+													</a>
+												</td>
+											<td data-title="Total" class="product-subtotal">
+												{{ (item.product.soldePrice / 100 * item.quantity) | number_format(2,',','.') }} €
+											<td data-title="TVA (20%)" class="product-subtotal">
+													{{ ((item.product.soldePrice  / 100 * item.quantity) * 0.20) | number_format(2,',','.') }} €
+											</td>
+											<td data-title="Total TTC" class="product-subtotal">
+													{{ (item.ttc /100) | number_format(2,',','.') }} €	
+
+											</td>
+											<td>
+											<td data-title="Remove" class="product-remove">
+												<a href="#">
+													<i class="ti-close"></i>
+												</a>
+											</td>
+										</tr>
+									{% endfor %}
+
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<div class="medium_divider"></div>
+						<div class="divider center_icon">
+							<i class="ti-shopping-cart-full"></i>
+						</div>
+						<div class="medium_divider"></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="border p-3 p-md-4 carrier_form">
+							<div class="heading_s1 mb-3">
+								<h6>Choose your carrier</h6>
+							</div>
+							<form action="/cart/carrier" method="post">
+								<select name="carrierId" value="{# {{cart.carrier.id}} #}" id="carrier" class="form-control"></select>
+							</form>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="border p-3 p-md-4">
+							<div class="heading_s1 mb-3">
+								<h6>Cart Totals</h6>
+							</div>
+							<div class="table-responsive">
+								<table class="table">
+									<tbody>
+										<tr>
+											<td class="cart_total_label">Cart Subtotal HT</td>
+											<td class="cart_sub_total_ht_amount"> {{ (cart.sub_total/100) | number_format(2,',','.') }} €  </td>
+										</tr>
+										<tr>	
+											<td class="cart_total_label">TVA</td>
+											<td class="cart_sub_total_taxe_amount">{{ (cart.sub_total_tva/100) | number_format(2,',','.') }} € </td>
+										</tr>
+										<tr>
+											<td class="cart_total_label">Shipping</td>
+											<td class="cart_shipping_total_amount">Free Shipping</td>
+										</tr>
+										<tr>
+											<td class="cart_total_label">Total TTC</td>
+											<td class="cart_total_amount"><strong> {{ (cart.sub_total_ttc/100) | number_format(2,',','.') }} € </strong></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<a routerlink="/checkout" class="btn btn-fill-out" ng-reflect-router-link="/checkout" href="/checkout">Proceed To CheckOut</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+{% endblock %}
+
+{% block javascripts %}
+	<script>
+		
+	</script>
+{% endblock %}
+
+
+
